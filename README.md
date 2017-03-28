@@ -8,10 +8,10 @@ redis命令都支持的,只是维护槽分配的节点,然后用metatable把所�
 
 * [Methods](#methods)
     * [new](#new)
-    * [get]
-    * [set]
-    * [keys]
-    * [...]
+    * [get](#new)
+    * [set](#new)
+    * [keys](#new)
+    * [...](#new)
     * [cluster_dels](#cluster_dels)
     * [cluster_status](#cluster_status)
     
