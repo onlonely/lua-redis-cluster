@@ -1,10 +1,11 @@
 Name
 =======
 
-纯lua实现的openresty上使用的redis集群实现,依赖春哥的lua-resty-redis(https://github.com/openresty/lua-resty-redis)
+纯lua实现的openresty上使用的redis集群实现,
+依赖春哥的lua-resty-redis(https://github.com/openresty/lua-resty-redis)
 代码逻辑基本上是redis的C实现照搬过来的,增加了些个人需要的功能,是长连接的.
-redis命令都支持的,只是维护槽分配的节点,然后用metatable把所有命令执行都交给春哥的lua-resty-redis执行
-
+redis命令都支持的,只是维护槽分配的节点,然后用metatable把所有命令执行都交给春哥的lua-resty-redis执行.
+发现春哥修改过redis.lua而我从未更新过,不知道区别在那里!坑一枚
 
 * [Methods](#methods)
     * [new](#cluster_dels)
