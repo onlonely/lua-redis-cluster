@@ -23,7 +23,7 @@ Methods
 基本用法
 ```lua
 local redis_cluster = require "resty.redis_cluster"
-local cluster_id = "marketing_cluster"
+local cluster_id = "redis_cluster"
 local startup_nodes = { {"10.10.10.1", 10101},{"10.10.10.2", 10201},{"10.10.10.3", 10301}}
 local opt = { 
 	    timeout = 1000,
