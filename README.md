@@ -7,11 +7,11 @@ redis命令都支持的,只是维护槽分配的节点,然后用metatable把所�
 
 
 * [Methods](#methods)
-    * [new](#new)
-    * [get](#new)
-    * [set](#new)
-    * [keys](#new)
-    * [...](#new)
+    * [new](#cluster_dels)
+    * [get](#cluster_dels)
+    * [set](#cluster_dels)
+    * [keys](#cluster_dels)
+    * [...](#cluster_dels)
     * [cluster_dels](#cluster_dels)
     * [cluster_status](#cluster_status)
     
