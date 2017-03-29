@@ -29,14 +29,16 @@ local redis_cluster = require "resty.redis_cluster"
 local cluster_id = "redis_cluster"
 local startup_nodes = { {"10.10.10.1", 10101},{"10.10.10.2", 10201},{"10.10.10.3", 10301}}
 local opt = { 
-	    timeout = 1000,
-	    keepalive_size = 50,
-	    keepalive_duration = 60000
-	}
+	    timeout = 1000,--执行超时时间
+	    keepalive_size = 50,--长连接数量
+    keepalive_duration = 60000 --长连接保持时间
+    }
   
 local rc = redis_cluster:new(cluster_id, startup_nodes, opt)
+local res,err=rc:set("xuzz",1)
+ngx.log(ngx.ERR,"res=",tostring(res),err)
 local res,err=rc:get("xuzz")
-ngx.log(ngx.ERR,"res=",tostring(res))
+ngx.log(ngx.ERR,"res=",tostring(res),err)
 ```
 
 cluster_dels
