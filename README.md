@@ -5,22 +5,25 @@ Name
 依赖春哥的lua-resty-redis(https://github.com/openresty/lua-resty-redis)
 代码逻辑基本上是redis的C实现照搬过来的,增加了些个人需要的功能,是长连接的.
 redis命令都支持的,只是维护槽分配的节点,然后用metatable把所有命令执行都交给春哥的lua-resty-redis执行.
-发现春哥修改过redis.lua而我从未更新过,不知道区别在那里!坑一枚
+发现春哥修改过redis.lua而我从未更新过,不知道区别在那里!
 
-* [Methods](#methods)
-    * [new](#cluster_dels)
-    * [get](#cluster_dels)
-    * [set](#cluster_dels)
-    * [keys](#cluster_dels)
-    * [...](#cluster_dels)
+但是这个库是本公司生产在使用的,目前没发现什么问题.剩下的看你们了^_^
+
+
+Methods
+=======
+* [new](#new)
+    * [get](#new)
+    * [set](#new)
+    * [keys](#new)
+    * [...](#new)
     * [cluster_dels](#cluster_dels)
     * [cluster_status](#cluster_status)
     
-Methods
-=======
 
 
-基本用法
+new
+-------
 ```lua
 local redis_cluster = require "resty.redis_cluster"
 local cluster_id = "redis_cluster"
