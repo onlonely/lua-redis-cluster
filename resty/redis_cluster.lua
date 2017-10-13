@@ -1,6 +1,20 @@
 local redis = require "resty.redis"
 local bit = require "bit"
 
+--字符串分割函数
+--传入字符串和分隔符，返回分割后的table
+function Split(str, delimiter)
+    if str==nil or str=='' or delimiter==nil then
+        return nil
+    end
+
+    local result = {}
+    for match in (str..delimiter):gmatch("(.-)"..delimiter) do
+        table.insert(result, match)
+    end
+    return result
+end
+
 local setmetatable = setmetatable
 local pairs = pairs
 local sub = string.sub
@@ -319,6 +333,12 @@ function _M.get_connection_by_slot(self, slot)
 
     if node == nil then
         return self:get_random_connection()
+    end
+
+    if node[2] == nil then
+        local addr = Split(node[3], ':')
+        local ports = Split(addr[2], '@')
+        node[2] = ports[1]
     end
 
     return get_redis_link(node[1], node[2], cluster.timeout)
